@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let BMI_NUMBER = (parseInt(prompt("Enter your BMI number :-")));
+        let weight = 70; // in kilograms
+        let height = 1.75; // in meters
+        var BMI = weight / (height * height);
+
+        if ( BMI_NUMBER < 18.5) {
+           console.log("Your categoies is UNDER WEIGHT");
+        } else if ( BMI_NUMBER >= 18.5 &&  BMI_NUMBER < 25) {
+            console.log("Your categoies is NORMAL WEIGHT");
+        } else if ( BMI_NUMBER >= 25 &&  BMI_NUMBER < 30) {
+            console.log("Your categoies is OVER WEIGHT");
+        } else {
+            console.log("Your categoies is OBESE");
+        }
+
+
+    </script>
+</body>
+
+</html>
