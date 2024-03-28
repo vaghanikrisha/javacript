@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let physics = (parseInt(prompt("Enter Marks For physics :- ")));
+        let chemistry = (parseInt(prompt("Enter Marks For Chemistry :- ")));
+        let biology = (parseInt(prompt("Enter Marks For Biology :- ")));
+        let mathematics = (parseInt(prompt("Enter Marks For Mathematics :- ")));
+        let computer = (parseInt(prompt("Enter Marks For Computer :- ")));
+
+        let totalMarks = physics + chemistry + biology + mathematics + computer;
+        let percentage = (totalMarks / 500) * 100;
+
+        if (percentage >= 90) {
+            console.log("Grade A");
+        } else if (percentage >= 80) 
+        {
+            console.log("Grade B");
+        } else if (percentage >= 70)
+         {
+            console.log("Grade C");
+        } else if (percentage >= 60)
+         {
+            console.log("Grade D");
+        } else if (percentage >= 50) 
+        {
+            console.log("Grade E");
+        } else {
+            console.log("Grade F");
+        }
+    </script>
+</body>
+
+</html>
