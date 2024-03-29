@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let N = parseInt(prompt("Enter the number of terms for Fibonacci series: "));
+        let firstNumber = 0, secondNumber = 1;
+        let thirdNumber;
+
+        console.log(firstNumber);
+        console.log(secondNumber);
+
+        do {
+            thirdNumber = firstNumber + secondNumber;
+            console.log(thirdNumber);
+            firstNumber = secondNumber;
+            secondNumber = thirdNumber;
+        } while (thirdNumber < N); 
+    </script>
+</body>
+</html>

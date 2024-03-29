@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let firstyear = parseInt(prompt("Enter the first Year: "));
+        let secondyear = parseInt(prompt("Enter the second Year: "));
+
+        console.log("Leap years between " + firstyear + " and " + secondyear + ":");
+
+        let year = firstyear;
+        while (year <= secondyear) {
+            
+            if ((year % 4 === 0)) {
+                console.log(year);
+            }
+            year++;
+        }
+    </script>
+</body>
+</html>
