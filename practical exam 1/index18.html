@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         let a = parseFloat(prompt("Enter the first number (a): "));
+        let b = parseFloat(prompt("Enter the second number (b): "));
+        let choice = prompt("Select operation (+, -, *, /): ");
+        let result;
+
+        if (choice == '+') {
+            result = a + b;
+            console.log("a + b = " + result);
+        } else if (choice == '-') {
+            result = a - b;
+            console.log("a - b = " + result);
+        } else if (choice == '*') {
+            result = a * b;
+            console.log("a * b = " + result);
+        } else if (choice == '/') {
+            if (b !== 0) {
+                result = a / b;
+                console.log("a / b = " + result);
+            } else {
+                console.log("Error: Division by zero!");
+            }
+        } else {
+            console.log("Invalid operation!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let firstnumber = (parseInt(prompt("Enter first number: ")));
+        let secondnumber = (parseInt(prompt("Enter second number: ")));
+
+        console.log("Original values:");
+        console.log("First number:", firstnumber);
+        console.log("Second number:", secondnumber);
+
+        // Swap the variables without using a function
+        var thirdnumber = firstnumber;
+        firstnumber = secondnumber;
+        secondnumber = thirdnumber;
+
+        // Display the swapped values
+        console.log("Swapped values:");
+        console.log("First number:", firstnumber);
+        console.log("Second number:", secondnumber);
+
+    </script>
+</body>
+
+</html>
