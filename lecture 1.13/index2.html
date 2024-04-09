@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+
+        switch (new Date().getDay()) {
+            case 0:
+                day = "It's Sunday";
+                break;
+            case 1:
+                day = "It's Monday";
+                break;
+            case 2:
+                day = "It's Tuesday";
+                break;
+            case 3:
+                day = "It's Wednesday";
+                break;
+            case 4:
+                day = "It's Thursday";
+                break;
+            case 5:
+                day = "It's Friday";
+                break;
+            case 6:
+                day = "It's Saturday";
+                break;
+        }
+        document.getElementById("demo").innerHTML = day;
+    </script>
+</body>
+
+</html>

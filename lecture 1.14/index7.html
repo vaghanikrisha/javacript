@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+
+        let number1 = parseInt(prompt("Enter Your First Value : "));
+        let number2 = parseInt(prompt("Enter Your Second Value : "));
+        let number3 = parseInt(prompt("Enter Your Third Value : "));
+
+
+        function Number(number1, number2, number3) {
+            if (number1 > number2) {
+                if (number1 > number3) {
+                    return "Number1 is Grater than value of Number2 & Number3 : " + number1;
+                } else {
+                    return "Number3 is Grater than value of Number1 & Number2 : " + number3;
+                }
+            } else {
+                if (number2 > number3) {
+                    return "Number2 is Grater than value of Number1 & Number3 : " + number2;
+                } else {
+                    return "Number3 is Grater than value of Number1 & Number2 : " + number3;
+                }
+            }
+        }
+        console.log("number1 is : " + number1);
+        console.log("number2 is : " + number2);
+        console.log("number3 is : " + number3);
+
+
+        console.log("Answer : " + Number(number1,number2,num3));
+    </script>
+</body>
+
+</html>
