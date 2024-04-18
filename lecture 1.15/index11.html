@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="fruits"></p>
+    <p id="fruits1"></p>
+    <p id="fruits2"></p>
+
+    <script>
+        let fruits = ["Apple", "Mango", "Kiwi", "Cherry"];
+        document.getElementById("fruits").innerHTML = fruits;
+        document.getElementById("fruits1").innerHTML = fruits[0];
+        
+        // splice
+        fruits.splice(2, 0 , "Watermelon");
+        
+        document.getElementById("fruits2").innerHTML = fruits;
+
+    </script>
+</body>
+
+</html>
