@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function findmaximum() {
+            return Math.max.apply(Math, arguments);
+        }
+
+        // Test cases
+        let maximum1 = findmaximum(4, 2, 7, 1, 9);
+        let maximum2 = findmaximum(-3, 0, 5, -7, 2, 1);
+        let maximum3 = findmaximum(10, 8, 15, 20);
+
+        console.log("maximum value among arguments is:", maximum1);
+        console.log("maximum value among arguments is:", maximum2);
+        console.log("maximum value among arguments is:", maximum3);
+    </script>
+</body>
+
+</html>

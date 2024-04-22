@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function findMinimum() {
+            return Math.min.apply(Math, arguments);
+        }
+
+        // Test cases
+        let min1 = findMinimum(4, 2, 7, 1, 9);
+        let min2 = findMinimum(-3, 0, 5, -7, 2, 1);
+        let min3 = findMinimum(10, 8, 15, 20);
+
+        console.log("Minimum value among arguments is:", min1);
+        console.log("Minimum value among arguments is:", min2);
+        console.log("Minimum value among arguments is:", min3);
+    </script>
+</body>
+
+</html>
