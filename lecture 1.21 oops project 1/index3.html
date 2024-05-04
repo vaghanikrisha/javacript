@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class MultiplicationTable {
+            constructor(number) {
+                this.number = number;
+            }
+
+            Table() {
+                let multiplier = 1;
+                do {
+                    console.log(`${this.number} * ${multiplier} = ${this.number * multiplier}`);
+                    multiplier++;
+                } while (multiplier <= 10);
+            }
+        }
+        const number = parseInt(prompt("Enter the number for multiplication table:"));
+        const table = new MultiplicationTable(number);
+        table.Table();
+
+    </script>
+</body>
+
+</html>

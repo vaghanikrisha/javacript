@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>js formvalidation</title>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .img-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .bgimg {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        .inner-container {
+            width: 670px;
+            height: 700px;
+            position: absolute;
+            top: calc(30vh - 200px);
+            left: calc(67vw - 200px);
+            overflow: hidden;
+            
+        }
+
+        .box {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            font-family: Helvetica;
+            color: #f2f2f2;
+            backdrop-filter: blur(15px);
+            background: rgba(245, 243, 243, 0.016);
+            border-radius: 20px;
+            
+
+        }
+
+        .box h1 {
+            text-align: center;
+            margin: 40px 0;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 30px;
+            background-color: #090d0f;
+            text-transform: uppercase;
+        }
+
+        .box form input {
+            display: block;
+            width: 400px;
+            margin: 10px;
+            padding: 15px;
+            background: rgba(37, 37, 37, 0.2);
+            color: #fff;
+            border-radius: 10px;
+            border: 0;
+
+        }
+
+        .box form label {
+            color: #000000;
+            font-size: 20px;
+            font-weight: 900;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .box input:focus,
+        .box input:active,
+        .box button:focus,
+        .box button:active {
+            outline: none;
+        }
+
+        .box button {
+            background: linear-gradient(to right, #000000, #8a887f);
+            border-radius: 20px;
+            border: 0;
+            color: #fff;
+            padding: 10px;
+            font-size: 25px;
+            width: 330px;
+            margin: 50px 20px 0;
+            display: block;
+            cursor: pointer;
+        }
+
+        .box button:active {
+            background: linear-gradient(to right, #e19a76, #424d54);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="img-container">
+        <img src="img/bg3.jpeg" class="bgimg">
+
+        <div class="inner-container">
+            <div class="box">
+                <h1>Registration Form</h1>
+                <form name="loginForm" onsubmit="return form()">
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 10px 0px;">
+                        <label>Firstname : </label><input type="text" placeholder="Firstname" name="firstname">
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 10px 0px;">
+                        <label>Lastname : </label><input type="text" placeholder="Lastname" name="lastname" >
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 10px 0px;">
+                        <label>Contact Number : </label><input type="tel" placeholder="0000-000-000" name="phone">
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 10px 0px;">
+                        <label>Email Address : </label><input type="email" placeholder="Email" name="email" />
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 10px 0px;">
+                        <label>Create Password : </label><input type="password" placeholder="Create Password" name="pswd">
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: space-between; padding: 10px 10px 0px;">
+                        <label>Confirm Password : </label><input type="password" placeholder="Confirm Password"
+                            name="Pass">
+                    </div>
+                    <div style="display: flex; align-items: center; justify-content: center; padding: 10px 10px 0px;">
+                        <button type="submit" name="submit">Submit</button>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function form() {
+            let x = document.forms.loginForm.firstname.value;
+            if (x == "") {
+                alert("Firstname must be filled out.");
+                return false;
+            }
+            let y = document.forms.loginForm.phone.value;
+            if (y == "") {
+                alert("Contact Number must be filled out.");
+                return false;
+            }
+            let z = document.forms.loginForm.email.value;
+            if (z == "") {
+                alert("Email Address must be filled out.");
+                return false;
+            }
+
+            let password = document.forms.loginForm.pswd.value;
+            if (password == "") {
+                alert("password must be filled out.");
+                return false;
+            }
+            if (!checkpass(password)) {
+                alert("Password is weak. It must contain at least one uppercase letter, one lowercase letter, one digit, and one special character (@, #, $, _).");
+                return false;
+            }
+
+            let confirmPassword = document.forms.loginForm.Pass.value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            alert("You have successfully registered.");
+            return true;
+        }
+
+        function checkpass(password) {
+            let upper = 0, lower = 0, number = 0, specialchar = 0;
+
+            for (let i = 0; i < password.length; i++) {
+                if (password.charCodeAt(i) >= 65 && password.charCodeAt(i) <= 90)
+                    upper++;
+                if (password.charCodeAt(i) >= 97 && password.charCodeAt(i) <= 122)
+                    lower++;
+                if (password.charCodeAt(i) >= 48 && password.charCodeAt(i) <= 57)
+                    number++;
+                if (password[i] === '@' || password[i] === '#' || password[i] === '$' || password[i] === '_')
+                    specialchar++;
+            }
+
+            return (upper > 0 && number > 0 && lower > 0 && specialchar > 0);
+        }
+    </script>
+</body>
+
+</html>

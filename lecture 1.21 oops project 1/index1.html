@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage</title>
+</head>
+<body>
+    <script>
+        class Student {
+            constructor(physics, chemistry, biology, mathematics, computer) {
+                this.physics = this.SubMarks(physics);
+                this.chemistry = this.SubMarks(chemistry);
+                this.biology = this.SubMarks(biology);
+                this.mathematics = this.SubMarks(mathematics);
+                this.computer = this.SubMarks(computer);
+            }
+
+            SubMarks(marks) {
+                if (marks < 0 || marks > 100) {
+                    throw new Error("Invalid marks. Marks should be between 0 and 100.");
+                }
+                return marks;
+            }
+
+            SubPercentage() {
+                let totalMarks = this.physics + this.chemistry + this.biology + this.mathematics + this.computer;
+                let percentage = (totalMarks / 500) * 100;
+                return percentage;
+            }
+
+            SubGrade() {
+                let percentage = this.SubPercentage();
+                let grade;
+
+                if (percentage >= 90) {
+                    grade = 'A';
+                } else if (percentage >= 80) {
+                    grade = 'B';
+                } else if (percentage >= 70) {
+                    grade = 'C';
+                } else if (percentage >= 60) {
+                    grade = 'D';
+                } else if (percentage >= 50) {
+                    grade = 'E';
+                } else if (percentage >= 40) {
+                    grade = 'F';
+                } else {
+                    grade = 'Fail';
+                }
+
+                return grade;
+            }
+        }
+        try {
+            const student1 = new Student(85, 78, 92, 70, 88);
+            console.log("Percentage:", student1.SubPercentage()+ "%");
+            console.log("Grade:", student1.SubGrade());
+        } catch (error) {
+            console.error(error.message);
+        }
+    </script>
+</body>
+</html>
