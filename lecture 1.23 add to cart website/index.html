@@ -71,92 +71,16 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-md-12 col-lg-3 mb-5 mb-lg-0">
+                <div class="col-md-12 col-lg-12 mb-5 mb-lg-0">
                     <h2 class="mb-4 section-title">Crafted with excellent material.</h2>
                     <p class="mb-4">Donec vitae odio quis nisl dapibus malesuada. Nullam ac aliquet velit. Aliquam
                         vulputate velit imperdiet dolor tempor tristique. </p>
                     <p><a href="shop.html" class="btn">Explore</a></p>
                 </div>
 
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0 mt-5">
-                    <a class="product-item" href="add to cart.html">
-                        <img src="images/product-1.png" class="img-fluid product">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
+                <div id="productItems" class="row">
+                    <!-- Product items will be dynamically added here -->
                 </div>
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0 mt-5">
-                    <a class="product-item" href="add to cart.html">
-                        <img src="images/product-2.png" class="img-fluid product">
-                        <h3 class="product-title">Kruzo Aero Chair</h3>
-                        <strong class="product-price">$78.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0 mt-5">
-                    <a class="product-item" href="add to cart.html">
-                        <img src="images/product-3.png" class="img-fluid product">
-                        <h3 class="product-title">Ergonomic Chair</h3>
-                        <strong class="product-price">$43.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0 mt-5">
-                    <a class="product-item" href="add to cart.html">
-                        <img src="images/product-1.png" class="img-fluid product">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0 mt-5">
-                    <a class="product-item" href="add to cart.html">
-                        <img src="images/product-3.png" class="img-fluid product">
-                        <h3 class="product-title">Ergonomic Chair</h3>
-                        <strong class="product-price">$43.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0 mt-5">
-                    <a class="product-item" href="add to cart.html">
-                        <img src="images/product-2.png" class="img-fluid product">
-                        <h3 class="product-title">Kruzo Aero Chair</h3>
-                        <strong class="product-price">$78.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0 mt-5">
-                    <a class="product-item" href="add to cart.html">
-                        <img src="images/sofa.png" class="img-fluid product">
-                        <h3 class="product-title">Nordic Chair</h3>
-                        <strong class="product-price">$50.00</strong>
-
-                        <span class="icon-cross">
-                            <img src="images/cross.svg" class="img-fluid">
-                        </span>
-                    </a>
-                </div>
-
-
 
             </div>
         </div>
@@ -297,10 +221,10 @@
                             <a href="#!" class="text-reset">Laravel</a>
                         </p>
                     </div>
-                    
+
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                        
-                        <h6 class="text-uppercase fw-bold mb-4 mt-4"style="color: #fff;">
+
+                        <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff;">
                             Useful links
                         </h6>
                         <p style="color: #fff;">
@@ -317,7 +241,7 @@
                         </p>
                     </div>
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                        <h6 class="text-uppercase fw-bold mb-4 mt-4"style="color: #fff;">Contact</h6>
+                        <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff;">Contact</h6>
                         <p style="color: #fff;"><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
                         <p style="color: #fff;">
                             <i class="fas fa-envelope me-3"></i>
@@ -338,7 +262,145 @@
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
+
+    <script>
+        let products = [
+            {
+                item: 1,
+                name: "Nordic Chair",
+                price: "$50.00",
+                image: "images/product-1.png"
+            },
+            {
+                item: 2,
+                name: "Kruzo Aero Chair",
+                price: "$78.00",
+                image: "images/product-2.png"
+            },
+            {
+                item: 3,
+                name: "Ergonomic Chair",
+                price: "$43.00",
+                image: "images/product-3.png"
+            },
+            {
+                item: 4,
+                name: "sofa Chair",
+                price: "$90.00",
+                image: "images/sofa.png"
+            },
+            
+            {
+                item: 5,
+                name: "Kruzo Aero Chair",
+                price: "$78.00",
+                image: "images/product-2.png"
+            },
+            {
+                item: 6,
+                name: "sofa Chair",
+                price: "$90.00",
+                image: "images/sofa.png"
+            },
+            {
+                item: 7,
+                name: "Ergonomic Chair",
+                price: "$43.00",
+                image: "images/product-3.png"
+            },
+            {
+                item: 8,
+                name: "Nordic Chair",
+                price: "$50.00",
+                image: "images/product-1.png"
+            },
+            
+            {
+                item: 9,
+                name: "Nordic Chair",
+                price: "$50.00",
+                image: "images/product-1.png"
+            },
+            {
+                item: 10,
+                name: "Kruzo Aero Chair",
+                price: "$78.00",
+                image: "images/product-2.png"
+            },
+            {
+                item: 11,
+                name: "Ergonomic Chair",
+                price: "$43.00",
+                image: "images/product-3.png"
+            },
+            {
+                item: 12,
+                name: "sofa Chair",
+                price: "$90.00",
+                image: "images/sofa.png"
+            },
+            {
+                item: 13,
+                name: "Nordic Chair",
+                price: "$50.00",
+                image: "images/product-1.png"
+            },
+            {
+                item: 14,
+                name: "sofa Chair",
+                price: "$90.00",
+                image: "images/sofa.png"
+            },
+            {
+                item: 15,
+                name: "Kruzo Aero Chair",
+                price: "$78.00",
+                image: "images/product-2.png"
+            },
+            {
+                item: 16,
+                name: "Ergonomic Chair",
+                price: "$43.00",
+                image: "images/product-3.png"
+            },
+            
+        ];
+
+        function addProductItems() {
+            let productItems = document.getElementById("productItems");
+            let tbl = "";
+            products.forEach(product => {
+                tbl += `
+                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0 mt-5">
+                    <div class="product-item">
+                        <img src="${product.image}" class="img-fluid product" alt="${product.name}">
+                        <h3 class="product-title">${product.name}</h3>
+                        <strong class="product-price">${product.price}</strong>
+                        <span class="icon-cross">
+                            <img src="images/cross.svg" onclick="addcart(${product.item})" class="img-fluid" alt="Cross Icon">
+                        </span>
+                    </div>
+                </div>
+                `;
+            });
+            productItems.innerHTML = tbl;
+        }
+
+        addProductItems();
+
+        let cart = [];
+
+        const addcart = (id) => {
+            let c = products.find(item => item.id == id);
+
+            if(c){
+                cart.push(c);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert("Your Product is Successfully added to the cart");
+
+            }
+        }
+    </script>
 </body>
 
 </html>

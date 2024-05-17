@@ -74,61 +74,12 @@
                                     <th class="product-name">Product</th>
                                     <th class="product-price">Price</th>
                                     <th class="product-quantity">Quantity</th>
-                                    <th class="product-total">Total</th>
                                     <th class="product-remove">Remove</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="cart">
 
-                                <tr>
-                                    <td class="Product-image">
-                                        <img src="images/product-1.png" alt="Image" class="img-fluid">
-                                    </td>
-                                    <td class="product-name">
-                                        <h2 class="h5 text-black">Product 1</h2>
-                                    </td>
-                                    <td>$49.00</td>
-
-                                    <td>
-                                        <div class="input-group mb-3 d-flex align-items-center quantity-container"
-                                            style="max-width: 120px;">
-                                            <div class="input-group-minus">
-                                                <button class="btn btn-outline-black decrease" type="button">&minus;</button>
-                                            </div>
-                                            <input type="text" class="form-control text-center" value="1">
-                                            <div class="input-group-plus">
-                                                <button class="btn btn-outline-black increase" type="button">&plus;</button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>$49.00</td>
-                                    <td><a href="#" class="btn btn-black btn-sm">DELETE</a></td>
-                                </tr>
-
-                                <tr>
-                                    <td class="Product-image">
-                                        <img src="images/product-2.png" alt="Image" class="img-fluid">
-                                    </td>
-                                    <td class="product-name">
-                                        <h2 class="h5 text-black">Product 2</h2>
-                                    </td>
-                                    <td>$49.00</td>
-                                    <td>
-                                        <div class="input-group mb-3 d-flex align-items-center"
-                                            style="max-width: 120px;">
-                                            <div class="input-group-minus">
-                                                <button class="btn btn-outline-black decrease" type="button">&minus;</button>
-                                            </div>
-                                            <input type="text" class="form-control text-center" value="1">
-                                            <div class="input-group-plus">
-                                                <button class="btn btn-outline-black increase" type="button">&plus;</button>
-                                            </div>
-                                        </div>
-
-                                    </td>
-                                    <td>$49.00</td>
-                                    <td><a href="#" class="btn btn-black btn-sm">DELETE</a></td>
-                                </tr>
+                            
                             </tbody>
                         </table>
                     </div>
@@ -171,7 +122,7 @@
                                     <span class="text-black">Subtotal</span>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <strong class="text-black">$230.00</strong>
+                                    <strong class="text-black">$50.00</strong>
                                 </div>
                             </div>
                             <div class="row mb-5">
@@ -179,7 +130,7 @@
                                     <span class="text-black">Total</span>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <strong class="text-black">$230.00</strong>
+                                    <strong class="text-black">$50.00</strong>
                                 </div>
                             </div>
 
@@ -195,79 +146,155 @@
         </div>
     </div>
     <!-- table section -->
-        <!-- Start Footer Section -->
-        <footer class="text-center text-lg-start text-muted" style="background-color: #3b5d50;">
-            <section class="">
-                <div class="container text-center text-md-start mt-5">
-                    <div class="row mt-3">
-                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
-                            <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff; font-size: 30px;">
-                                Furni.
-                            </h6>
-                            <p style="color: #fff;">
-                                Here you can use rows and columns to organize your footer content. Lorem ipsum
-                                dolor sit amet, consectetur adipisicing elit.
-                            </p>
-                        </div>
-                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-                            <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff;">
-                                Products
-                            </h6>
-                            <p style="color: #fff;">
-                                <a href="#!" class="text-reset">Angular</a>
-                            </p>
-                            <p style="color: #fff;">
-                                <a href="#!" class="text-reset">React</a>
-                            </p>
-                            <p style="color: #fff;">
-                                <a href="#!" class="text-reset">Vue</a>
-                            </p>
-                            <p style="color: #fff;">
-                                <a href="#!" class="text-reset">Laravel</a>
-                            </p>
-                        </div>
-                        
-                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-                            
-                            <h6 class="text-uppercase fw-bold mb-4 mt-4"style="color: #fff;">
-                                Useful links
-                            </h6>
-                            <p style="color: #fff;">
-                                <a href="#!" class="text-reset">Pricing</a>
-                            </p>
-                            <p style="color: #fff;">
-                                <a href="#!" class="text-reset">Settings</a>
-                            </p>
-                            <p style="color: #fff;">
-                                <a href="#!" class="text-reset">Orders</a>
-                            </p>
-                            <p style="color: #fff;">
-                                <a href="#!" class="text-reset">Help</a>
-                            </p>
-                        </div>
-                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-                            <h6 class="text-uppercase fw-bold mb-4 mt-4"style="color: #fff;">Contact</h6>
-                            <p style="color: #fff;"><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
-                            <p style="color: #fff;">
-                                <i class="fas fa-envelope me-3"></i>
-                                info@example.com
-                            </p>
-                            <p style="color: #fff;"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
-                            <p style="color: #fff;"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
-                        </div>
+    <!-- Start Footer Section -->
+    <footer class="text-center text-lg-start text-muted" style="background-color: #3b5d50;">
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff; font-size: 30px;">
+                            Furni.
+                        </h6>
+                        <p style="color: #fff;">
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff;">
+                            Products
+                        </h6>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Angular</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">React</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                        <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff;">
+                            Useful links
+                        </h6>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff;">Contact</h6>
+                        <p style="color: #fff;"><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p style="color: #fff;">
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p style="color: #fff;"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p style="color: #fff;"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
                     </div>
                 </div>
-            </section>
-            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); color: #fff;">
-                © 2021 Copyright:
-                <a class="text-reset fw-bold" href="">furni.com</a>
             </div>
-        </footer>
-        <!-- End Footer Section -->
+        </section>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); color: #fff;">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="">furni.com</a>
+        </div>
+    </footer>
+    <!-- End Footer Section -->
 
-        
+
     <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/app.js"></script>
+     
+    <!-- <script>
+
+
+        /* counter start */
+        let inputgroup = 0;
+        let totalPrice = 0;
+
+        const counterValue = document.getElementById('form-control');
+        const incrementBtn = document.getElementById('input-group-plus');
+        const decrementBtn = document.getElementById('input-group-minus');
+        const totalSpan = document.getElementById('total');
+
+        // To increment the value of counter
+        input - group - plus.addEventListener('click', () => {
+            inputgroup++;
+            counterValue.innerHTML = inputgroup;
+            totalPrice += 20; // Assuming each product costs $20
+            totalSpan.innerHTML = '$' + totalPrice;
+        });
+
+        // To decrement the value of counter
+        input - group - minus.addEventListener('click', () => {
+            if (inputgroup > 0) {
+                inputgroup--;
+                counterValue.innerHTML = input - group;
+                totalPrice -= 20; // Assuming each product costs $20
+                totalSpan.innerHTML = '$' + totalPrice;
+            }
+        });
+
+
+       
+
+    </script> -->
+    <script>
+        /* counter end */
+        const getcart = () => {
+            let data = JSON.parse(localStorage.getItem('cart'));
+
+            let tbl = "";
+
+            data.map((c) => {
+                return (
+
+                    tbl +=
+
+                    `
+                        <tr>
+                            <td><img src="${c.image}" style = "width : 200px;"></td>
+                            <td style = "font-weight :800;">${c.name}</td>
+                            <td style = "font-weight :800;">${c.price}</td>
+                            <td>
+                                <input type ="number"style = "width :90px; " value="${c.quantity}">
+                            </td>
+                            <td>
+                                <button style = "background-color : #000; color :white ; width : 100px" onclick="delet(${c.id})">DELETE </button>
+                            </td>
+                        </tr>
+                    `
+                )
+            });
+            document.getElementById("cart").innerHTML = tbl;
+
+        }
+
+        getcart();
+    </script>
+    <script>
+        const delet = (id) => {
+            let allcart = JSON.parse(localStorage.getItem('cart'));
+            let deleterecord = allcart.filter((c) => c.id != id);
+            localStorage.setItem('cart', JSON.stringify(deleterecord));
+            alert('delete successfully..!!');
+            getcart();
+        }
+    </script>
 </body>
 
 </html>
