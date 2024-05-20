@@ -78,7 +78,7 @@
                     <p><a href="shop.html" class="btn">Explore</a></p>
                 </div>
 
-                <div id="productItems" class="row">
+                <div id="products" class="row">
                     <!-- Product items will be dynamically added here -->
                 </div>
 
@@ -266,127 +266,111 @@
     <script>
         let products = [
             {
-                item: 1,
+                id: 1,
                 name: "Nordic Chair",
-                price: "$50.00",
-                image: "images/product-1.png"
+                price: 50.00,
+                image: "images/product-1.png",
+                quantity:1,
             },
             {
-                item: 2,
+                id: 2,
                 name: "Kruzo Aero Chair",
-                price: "$78.00",
-                image: "images/product-2.png"
+                price: 78.00,
+                image: "images/product-2.png",
+                quantity:1,
             },
             {
-                item: 3,
+                id: 3,
                 name: "Ergonomic Chair",
-                price: "$43.00",
-                image: "images/product-3.png"
+                price: 43.00,
+                image: "images/product-3.png",
+                quantity:1,
             },
             {
-                item: 4,
+                id: 4,
                 name: "sofa Chair",
-                price: "$90.00",
-                image: "images/sofa.png"
+                price: 90.00,
+                image: "images/sofa.png",
+                quantity:1,
             },
-            
             {
-                item: 5,
+                id: 5,
+                name: "sofa Chair",
+                price: 100.00,
+                image: "images/product-14.png",
+                quantity:1,
+            },
+            {
+                id: 6,
+                name: "Ergonomic Chair",
+                price: 55.00,
+                image: "images/product-16.png",
+                quantity:1,
+            },
+            {
+                id: 7,
                 name: "Kruzo Aero Chair",
-                price: "$78.00",
-                image: "images/product-2.png"
+                price: 95.00,
+                image: "images/product-12.png",
+                quantity:1,
             },
             {
-                item: 6,
-                name: "sofa Chair",
-                price: "$90.00",
-                image: "images/sofa.png"
-            },
-            {
-                item: 7,
-                name: "Ergonomic Chair",
-                price: "$43.00",
-                image: "images/product-3.png"
-            },
-            {
-                item: 8,
+                id: 8,
                 name: "Nordic Chair",
-                price: "$50.00",
-                image: "images/product-1.png"
+                price: 60.00,
+                image: "images/product-7.png",
+                quantity:1,
             },
-            
             {
-                item: 9,
+                id: 9,
                 name: "Nordic Chair",
-                price: "$50.00",
-                image: "images/product-1.png"
+                price: 65.00,
+                image: "images/product-8.png",
+                quantity:1,
             },
             {
-                item: 10,
-                name: "Kruzo Aero Chair",
-                price: "$78.00",
-                image: "images/product-2.png"
-            },
-            {
-                item: 11,
-                name: "Ergonomic Chair",
-                price: "$43.00",
-                image: "images/product-3.png"
-            },
-            {
-                item: 12,
-                name: "sofa Chair",
-                price: "$90.00",
-                image: "images/sofa.png"
-            },
-            {
-                item: 13,
+                id: 9,
                 name: "Nordic Chair",
-                price: "$50.00",
-                image: "images/product-1.png"
+                price: 60.00,
+                image: "images/product-14.png",
+                quantity:1,
             },
             {
-                item: 14,
-                name: "sofa Chair",
-                price: "$90.00",
-                image: "images/sofa.png"
+                id: 10,
+                name: "Nordic Chair",
+                price: 55.00,
+                image: "images/product-10.png",
+                quantity:1,
             },
             {
-                item: 15,
-                name: "Kruzo Aero Chair",
-                price: "$78.00",
-                image: "images/product-2.png"
-            },
-            {
-                item: 16,
-                name: "Ergonomic Chair",
-                price: "$43.00",
-                image: "images/product-3.png"
+                id: 11,
+                name: "Nordic Chair",
+                price: 80.00,
+                image: "images/product-9.png",
+                quantity:1,
             },
             
         ];
-
-        function addProductItems() {
-            let productItems = document.getElementById("productItems");
+           
             let tbl = "";
-            products.forEach(product => {
+            products.map((p) => {
                 tbl += `
                 <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0 mt-5">
                     <div class="product-item">
-                        <img src="${product.image}" class="img-fluid product" alt="${product.name}">
-                        <h3 class="product-title">${product.name}</h3>
-                        <strong class="product-price">${product.price}</strong>
+                        <img src="${p.image}" class="img-fluid product">
+                        <h3 class="product-title">${p.name}</h3>
+                        <strong class="product-price">$${p.price}</strong>
                         <span class="icon-cross">
-                            <img src="images/cross.svg" onclick="addcart(${product.item})" class="img-fluid" alt="Cross Icon">
+                            <img src="images/cross.svg" onclick="addcart(${p.id})" class="img-fluid" alt="Cross Icon">
                         </span>
+                        <span>${p.quantity}</span>
                     </div>
                 </div>
                 `;
             });
-            productItems.innerHTML = tbl;
-        }
+            document.getElementById("products").innerHTML = tbl;
 
-        addProductItems();
+
 
         let cart = [];
 

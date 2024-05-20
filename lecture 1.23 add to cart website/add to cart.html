@@ -25,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarsFurni">
                 <ul class="custom navbar-nav ms-auto mb-2 mb-md-0">
                     <li class="item active">
-                        <a class="nav-link" href="#">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li><a class="nav-link" href="#">Shop</a></li>
                     <li><a class="nav-link" href="#">About us</a></li>
@@ -74,12 +74,14 @@
                                     <th class="product-name">Product</th>
                                     <th class="product-price">Price</th>
                                     <th class="product-quantity">Quantity</th>
+                                    <th class="product-subtotal">subtotal</th>
+
                                     <th class="product-remove">Remove</th>
                                 </tr>
                             </thead>
                             <tbody id="cart">
 
-                            
+
                             </tbody>
                         </table>
                     </div>
@@ -89,11 +91,9 @@
             <div class="row">
                 <div class="col-md-6">
                     <div class="row mb-5">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                            <button class="btn btn-black btn-sm btn-block">Update Cart</button>
-                        </div>
+
                         <div class="col-md-6">
-                            <button class="btn btn-outline-black btn-sm btn-block">Continue Shopping</button>
+                            <button  class="btn btn-outline-black btn-sm btn-block"><a href="index.html" class="text-white" style="text-decoration: none; font-size: large;">Continue Shopping</a></button>
                         </div>
                     </div>
                     <div class="row">
@@ -119,20 +119,13 @@
                             </div>
                             <div class="row mb-3">
                                 <div class="col-md-6">
-                                    <span class="text-black">Subtotal</span>
-                                </div>
-                                <div class="col-md-6 text-right">
-                                    <strong class="text-black">$50.00</strong>
-                                </div>
-                            </div>
-                            <div class="row mb-5">
-                                <div class="col-md-6">
                                     <span class="text-black">Total</span>
                                 </div>
                                 <div class="col-md-6 text-right">
-                                    <strong class="text-black">$50.00</strong>
+                                    <strong class="text-black" id="subtotal">$50.00</strong>
                                 </div>
                             </div>
+                           
 
                             <div class="row">
                                 <div class="col-md-12">
@@ -218,83 +211,83 @@
 
 
     <script src="js/bootstrap.bundle.min.js"></script>
-     
-    <!-- <script>
-
-
-        /* counter start */
-        let inputgroup = 0;
-        let totalPrice = 0;
-
-        const counterValue = document.getElementById('form-control');
-        const incrementBtn = document.getElementById('input-group-plus');
-        const decrementBtn = document.getElementById('input-group-minus');
-        const totalSpan = document.getElementById('total');
-
-        // To increment the value of counter
-        input - group - plus.addEventListener('click', () => {
-            inputgroup++;
-            counterValue.innerHTML = inputgroup;
-            totalPrice += 20; // Assuming each product costs $20
-            totalSpan.innerHTML = '$' + totalPrice;
-        });
-
-        // To decrement the value of counter
-        input - group - minus.addEventListener('click', () => {
-            if (inputgroup > 0) {
-                inputgroup--;
-                counterValue.innerHTML = input - group;
-                totalPrice -= 20; // Assuming each product costs $20
-                totalSpan.innerHTML = '$' + totalPrice;
-            }
-        });
-
-
-       
-
-    </script> -->
     <script>
-        /* counter end */
-        const getcart = () => {
-            let data = JSON.parse(localStorage.getItem('cart'));
-
+        const updateCart = () => {
+            let data = JSON.parse(localStorage.getItem("cart")) || [];
             let tbl = "";
-
-            data.map((c) => {
-                return (
-
-                    tbl +=
-
-                    `
-                        <tr>
-                            <td><img src="${c.image}" style = "width : 200px;"></td>
-                            <td style = "font-weight :800;">${c.name}</td>
-                            <td style = "font-weight :800;">${c.price}</td>
-                            <td>
-                                <input type ="number"style = "width :90px; " value="${c.quantity}">
-                            </td>
-                            <td>
-                                <button style = "background-color : #000; color :white ; width : 100px" onclick="delet(${c.id})">DELETE </button>
-                            </td>
-                        </tr>
-                    `
-                )
+            let subtotal = 0;
+    
+            data.forEach((c) => {
+                // Check if quantity is not present, initialize it to 1
+                c.quantity = c.quantity || 1;
+    
+                let itemSubtotal = c.price * c.quantity;
+                subtotal += itemSubtotal;
+    
+                tbl += `
+                <tr>
+                    <td><img src="${c.image}" style="width: 200px;"></td>
+                    <td style="font-weight: 800;">${c.name}</td>
+                    <td style="font-weight: 800;">$${c.price}</td>
+                    <td>
+                        <button onclick="decreaseQuantity(${c.id})" style="background-color:#2f2f2f; color: white; width: 50px;">-</button>
+                        <span>${c.quantity}</span>
+                        <button onclick="increaseQuantity(${c.id})" style="background-color:#2f2f2f; color: white; width: 50px;">+</button>
+                    </td>
+                    <td id="subtotal${c.id}">$${itemSubtotal.toFixed(2)}</td>
+                    <td>
+                        <button style="background-color:#2f2f2f; color: white; width: 100px;" onclick="deleteItem(${c.id})">DELETE</button>
+                    </td>
+                </tr>`;
             });
+    
+            // Calculate Total
+            let total = subtotal;
+    
+            // Update HTML
             document.getElementById("cart").innerHTML = tbl;
-
-        }
-
-        getcart();
-    </script>
-    <script>
-        const delet = (id) => {
+            document.getElementById("subtotal").innerText = `$${subtotal.toFixed(2)}`;
+            document.getElementById("total").innerText = `$${total.toFixed(2)}`;
+        };
+    
+        const decreaseQuantity = (id) => {
             let allcart = JSON.parse(localStorage.getItem('cart'));
-            let deleterecord = allcart.filter((c) => c.id != id);
-            localStorage.setItem('cart', JSON.stringify(deleterecord));
-            alert('delete successfully..!!');
-            getcart();
-        }
+            let updatedCart = allcart.map((c) => {
+                if (c.id === id && c.quantity > 1) {
+                    c.quantity--;
+                }
+                return c;
+            });
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            updateCart();
+        };
+    
+        const increaseQuantity = (id) => {
+            let allcart = JSON.parse(localStorage.getItem('cart'));
+            let updatedCart = allcart.map((c) => {
+                if (c.id === id && c.quantity < 10) { // Check if quantity is less than 10
+                    c.quantity++;
+                }
+                return c;
+            });
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            updateCart();
+        };
+    
+        const deleteItem = (id) => {
+            let allcart = JSON.parse(localStorage.getItem('cart'));
+            let updatedCart = allcart.filter((c) => c.id != id);
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+            alert('Product deleted successfully');
+            updateCart();
+        };
+    
+        updateCart();
     </script>
+    
+    
+
+
 </body>
 
 </html>
