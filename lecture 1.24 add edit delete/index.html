@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD App</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 600px;
+            height: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #8fa5b5;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input[type="text"],
+        button {
+            width: calc(50% - 5px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #000000;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 20px;
+        }
+
+        th,
+        td {
+            border: 2px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4778a6;
+            color: #fff;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            margin: 0 auto;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, border 0.3s;
+            border: 2px solid #4778a6;
+            background-color: transparent;
+            color: #4778a6;
+            border: 2px solid #000;
+        }
+
+        .btn:hover {
+            background-color: #4778a6;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>CRUD APP</h1>
+        <input type="hidden" id="editid">
+        <div>
+            <label for="name">Name:</label>
+            <input style="width: 540px;" type="text" id="name" placeholder="Enter name">
+        </div>
+        <div>
+            <label for="Email">Email:</label>
+            <input style="width: 540px;" type="text" id="Email" placeholder="Enter email">
+        </div>
+        <button onclick="saveUser()" class="btn"
+            style="width: 540px; justify-content: center; align-items: center;  margin-left: 50px;">Submit</button>
+
+        <div class="table-responsive mt-4">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="record"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        let record = [];
+
+        const viewUser = () => {
+            let all = JSON.parse(localStorage.getItem('user')) || [];
+            let tbl = "";
+            all.forEach((user) => {
+                tbl += `
+                <tr>
+                    <td>${user.id}</td>
+                    <td>${user.name}</td>
+                    <td>${user.Email}</td>
+                    <td>
+                        <button onclick="deleteUser(${user.id})" class="btn">Delete</button>
+                        <button onclick="editUser(${user.id})" class="btn">Edit</button>
+                    </td>
+                </tr>
+            `;
+            });
+            document.getElementById('record').innerHTML = tbl;
+        };
+
+        viewUser();
+
+        const saveUser = () => {
+            let name = document.getElementById('name').value;
+            let Email = document.getElementById('Email').value;
+            let id = document.getElementById('editid').value;
+
+            let all = JSON.parse(localStorage.getItem('user')) || [];
+
+            if (id) {
+                all.forEach((item) => {
+                    if (item.id == id) {
+                        item.name = name;
+                        item.Email = Email;
+                    }
+                });
+                localStorage.setItem("user", JSON.stringify(all));
+                alert("Record successfully updated");
+                document.getElementById('editid').value = "";
+            } else {
+                let newId = all.length + 1;
+                let obj = {
+                    id: newId,
+                    name,
+                    Email
+                };
+
+                all.push(obj);
+                localStorage.setItem("user", JSON.stringify(all));
+                alert("User registered");
+            }
+
+            document.getElementById('name').value = "";
+            document.getElementById('Email').value = "";
+            viewUser();
+        };
+
+
+        const editUser = (id) => {
+            let all = JSON.parse(localStorage.getItem('user')) || [];
+            let single = all.find((item) => item.id == id);
+            document.getElementById('name').value = single.name;
+            document.getElementById('Email').value = single.Email;
+            document.getElementById('editid').value = single.id;
+        };
+
+    </script>
+</body>
+
+</html>

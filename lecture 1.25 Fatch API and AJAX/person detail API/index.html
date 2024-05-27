@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>CELEBRITY API</h2>
+    <p id="name"></p>
+    <p id="gender"></p>
+    <p id="nationality"></p>
+    <p id="occupation"></p>
+    <p id="height"></p>
+    <p id="birthday"></p>
+
+    <button id="people" style="background-color: black; color: #fff; width: 160px; height: 50px; font-size: large;">Random Clicks</button>
+    <script>
+        const celebrity = function () {
+            const person = [{
+                    "name": "michael jordan",
+                    "net_worth": 2200000000,
+                    "gender": "male",
+                    "nationality": "US",
+                    "occupation": [
+                        "basketball_player",
+                        "athlete",
+                        "spokesperson",
+                        "entrepreneur",
+                        "actor"
+                    ],
+                    "height": 1.98,
+                    "birthday": "1963-02-17",
+                },
+                {
+                    "name": "priya noida",
+                    "net_worth": 24000000,
+                    "gender": "female",
+                    "nationality": "UK",
+                    "occupation": [
+                        "cooking",
+                        "actor"
+                    ],
+                    "height": 1.98,
+                    "birthday": "1957-01-20",
+                }
+            ];
+            let index = Math.floor(Math.random() * person.length);
+            document.getElementById("name").innerHTML = person[index].name;
+            document.getElementById("gender").innerHTML = person[index].gender;
+            document.getElementById("nationality").innerHTML = person[index].nationality;
+            document.getElementById("occupation").innerHTML = person[index].occupation.join(", ");
+            document.getElementById("height").innerHTML = person[index].height;
+            document.getElementById("birthday").innerHTML = person[index].birthday;
+        }
+
+        document.getElementById("people").addEventListener('click', celebrity);
+
+    </script>
+</body>
+
+</html>

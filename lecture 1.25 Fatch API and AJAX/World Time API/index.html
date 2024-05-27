@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>World Time API</h2>
+    <p id="timezone"></p>
+    <p id="datetime"></p>
+    <p id="date"></p>
+    <p id="day_of_week"></p>
+
+    <button id="people"
+        style="background-color: black; color: #fff; width: 160px; height: 50px; font-size: large;">Random
+        Clicks</button>
+    <script>
+        const celebrity = function () {
+            const person = [
+                {
+                    "timezone": "Europe/London",
+                    "datetime": "2022-09-18 19:16:43 PM",
+                    "date": "2022-09-18",
+                    "day_of_week": "Sunday"
+                },
+                {
+                    "timezone": "America/New_York",
+                    "datetime": "2022-09-18 7:15:24 PM",
+                    "date": "2022-09-18",
+                    "day_of_week": "Sunday"
+                },
+                {
+                    "Country": "Japan",
+                    "timezone": "Asia/Tokyo",
+                    "datetime": "2022-09-19 03:16:43",
+                    "date": "2022-09-19",
+                    "day_of_week": "Monday"
+                },
+                {
+                    "Country": "Australia",
+                    "timezone": "Australia/Sydney",
+                    "datetime": "2022-09-19 04:16:43",
+                    "date": "2022-09-19",
+                    "day_of_week": "Monday"
+                }
+            ];
+            let index = Math.floor(Math.random() * person.length);
+            document.getElementById("timezone").innerHTML = person[index].timezone;
+            document.getElementById("datetime").innerHTML = person[index].datetime;
+            document.getElementById("date").src = person[index].date;
+            document.getElementById("day_of_week").innerHTML = person[index].day_of_week;
+        }
+
+        document.getElementById("people").addEventListener('click', celebrity);
+
+    </script>
+</body>
+
+</html>

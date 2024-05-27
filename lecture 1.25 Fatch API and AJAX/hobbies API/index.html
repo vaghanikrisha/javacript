@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>HOBBIES API</h2>
+    <p id="hobby"></p>
+    <p id="link"></p>
+    <p id="category"></p>
+
+    <button id="people"
+        style="background-color: black; color: #fff; width: 160px; height: 50px; font-size: large;">Random
+        Clicks</button>
+    <script>
+        const celebrity = function () {
+            const person = [
+                {
+                    "hobby": "Acroyoga",
+                    "link": "https://wikipedia.org/wiki/Acroyoga",
+                    "category": "general",
+                },
+                {
+                    "hobby": "Blogging",
+                    "link": "https://en.wikipedia.org/wiki/Blog",
+                    "category": "general"
+                },
+                {
+                    "hobby": "Web Design",
+                    "link": "https://en.wikipedia.org/wiki/Web_design",
+                    "category": "general"
+                },
+            ];
+            let index = Math.floor(Math.random() * person.length);
+            document.getElementById("hobby").innerHTML = person[index].hobby;
+            document.getElementById("link").innerHTML = person[index].link;
+            document.getElementById("category").src = person[index].category;
+
+        }
+
+        document.getElementById("people").addEventListener('click', celebrity);
+
+    </script>
+</body>
+
+</html>

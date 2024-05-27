@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>EMOJI API</h2>
+    <p id="code"></p>
+    <p id="character"></p>
+    <img id="image" src="" alt="Emoji Image" style="width: 80px;">
+    <p id="name"></p>
+    <p id="group"></p>
+    <p id="subgroup"></p>   
+
+    <button id="people" style="background-color : black ; color: #fff; width: 160px; height: 50px; font-size: large;">Random Clicks</button>
+    <script>
+        const celebrity = function() {
+            const person = [
+                {
+                    "code": "U+1F642",
+                    "character": "🙂",
+                    "image": "https://api-ninjas-data.s3.us-west-2.amazonaws.com/emojis/U%2B1F642.png",
+                    "name": "slightly smiling face",
+                    "group": "Smileys & Emotion",
+                    "subgroup": "face-smiling"
+                },
+                {
+                    "code": "U+1F92D",
+                    "character": "🤭",
+                    "image": "https://i.pinimg.com/736x/7b/3b/a1/7b3ba1769828030aa5d99fac61d59454.jpg" ,
+                    "name": "Face with Hand Over Mouth",
+                    "group": "Smileys & Emotion",
+                    "subgroup": "face-smiling"
+                },
+                {
+                    "code": "U+1F970",
+                    "character": "🥰",
+                    "image": "https://image.similarpng.com/very-thumbnail/2020/07/Smiling-Face-with-Hearts-vector-PNG.png",
+                    "name": "Smiling Face with Hearts",
+                    "group": "Smileys & Emotion",
+                    "subgroup": "lovely"
+                }
+            ];
+            let index = Math.floor(Math.random() * person.length);
+            document.getElementById("code").innerHTML = person[index].code;
+            document.getElementById("character").innerHTML = person[index].character;
+            document.getElementById("image").src = person[index].image;
+            document.getElementById("name").innerHTML = person[index].name;
+            document.getElementById("group").innerHTML = person[index].group;
+            document.getElementById("subgroup").innerHTML = person[index].subgroup;
+        }
+        document.getElementById("people").addEventListener('click', celebrity);
+
+    </script>
+</body>
+
+</html>

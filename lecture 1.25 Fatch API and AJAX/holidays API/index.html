@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>HOLIDAYS API</h2>
+    <p id="country"></p>
+    <p id="iso"></p>
+    <p id="date"></p>
+    <p id="day"></p>
+    <p id="name"></p>
+    <p id="type"></p>
+
+    <button id="people"
+        style="background-color: black; color: #fff; width: 160px; height: 50px; font-size: large;">Random
+        Clicks</button>
+    <script>
+        const celebrity = function () {
+            const person = [
+                {
+                    "country": "Canada",
+                    "iso": "CAN",
+                    "year": 2021,
+                    "date": "2021-04-02",
+                    "day": "Friday",
+                    "name": "Good Friday",
+                    "type": "PUBLIC_HOLIDAY"
+                },
+                {
+                    "country": "China",
+                    "iso": "CHN",
+                    "year": 2021,
+                    "date": "2021-09-06",
+                    "day": "Monday",
+                    "name": "Labour Day",
+                    "type": "PUBLIC_HOLIDAY"
+                },
+                {
+                    "country": "Germany",
+                    "iso": "DEU",
+                    "year": 2021,
+                    "date": "2021-12-25",
+                    "day": "Saturday",
+                    "name": "Christmas Day",
+                    "type": "PUBLIC_HOLIDAY"
+                },
+                {
+                    "country": "Australia",
+                    "iso": "AUS",
+                    "year": 2021,
+                    "date": "2021-01-01",
+                    "day": "Friday",
+                    "name": "New Year's Day",
+                    "type": "PUBLIC_HOLIDAY"
+                },
+                {
+                    "country": "America",
+                    "iso": "USA",
+                    "year": 2021,
+                    "date": "2021-04-05",
+                    "day": "Monday",
+                    "name": "Easter Monday",
+                    "type": "PUBLIC_HOLIDAY"
+                },
+                {
+                    "country": "LONDON",
+                    "iso": "UK",
+                    "year": 2021,
+                    "date": "2021-05-24",
+                    "day": "Monday",
+                    "name": "Victoria Day",
+                    "type": "PUBLIC_HOLIDAY"
+                },
+            ];
+            let index = Math.floor(Math.random() * person.length);
+            document.getElementById("country").innerHTML = person[index].country;
+            document.getElementById("iso").innerHTML = person[index].iso;
+            document.getElementById("date").innerHTML = person[index].date;
+            document.getElementById("day").innerHTML = person[index].day;
+            document.getElementById("name").innerHTML = person[index].name;
+            document.getElementById("type").innerHTML = person[index].type;
+
+        }
+
+        document.getElementById("people").addEventListener('click', celebrity);
+
+    </script>
+</body>
+
+</html>
