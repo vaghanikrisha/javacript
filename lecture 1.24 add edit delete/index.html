@@ -170,13 +170,19 @@
             viewUser();
         };
 
-
         const editUser = (id) => {
             let all = JSON.parse(localStorage.getItem('user')) || [];
             let single = all.find((item) => item.id == id);
             document.getElementById('name').value = single.name;
             document.getElementById('Email').value = single.Email;
             document.getElementById('editid').value = single.id;
+        };
+
+        const deleteUser = (id) => {
+            let all = JSON.parse(localStorage.getItem('user')) || [];
+            let updatedList = all.filter(user => user.id !== id);
+            localStorage.setItem("user", JSON.stringify(updatedList));
+            viewUser();
         };
 
     </script>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToyZone.</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/all.min.css">
+</head>
+
+<body>
+    <!-- Start Header -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" arial-label="toy navigation bar">
+
+        <div class="container">
+            <a class="navbar-brand" href="#">ToyZone<span>.</span></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarstoy"
+                aria-controls="navbarstoy" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarstoy">
+                <ul class="custom navbar-nav ms-auto mb-2 mb-md-0">
+                    <li class="item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li><a class="nav-link" href="#">Shop</a></li>
+                    <li><a class="nav-link" href="#">About us</a></li>
+                    <li><a class="nav-link" href="#">Services</a></li>
+                    <li><a class="nav-link" href="#">Contact us</a></li>
+                </ul>
+
+                <ul class="custom-icon navbar-nav mb-2 mb-md-0 ms-5">
+
+                    <li><a class="nav-link" href="cart.html"><img src="assets/img/cart.svg"></a></li>
+                </ul>
+            </div>
+        </div>
+
+    </nav>
+    <!-- End Header -->
+
+    <!-- Start Product Section -->
+    <div class="product-section">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12 col-lg-12 mb-5 mb-lg-0">
+
+                    <p class="mb-4 " style="color: #000; font-weight: 600; font-size: larger;">Lorem ipsum dolor, sit
+                        amet consectetur adipisicing elit. Asperiores quod natus explicabo dignissimos dolorem sequi
+                        velit quam blanditiis debitis maiores.</p>
+                    <p><a href="shop.html" class="btn" style="font-size: 40px; color: #000; font-weight: 800;">Explore
+                            Now</a></p>
+                </div>
+
+                <div id="products" class="row">
+                    <!-- Product items will be dynamically added here -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Product Section -->
+
+     <!-- Start Footer -->
+     <footer class="text-center text-lg-start text-muted" style="background-color: #000000;">
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff; font-size: 30px;">
+                            ToyZone.
+                        </h6>
+                        <p style="color: #fff;">
+                            Here you can use rows and columns to organize your footer content. Lorem ipsum
+                            dolor sit amet, consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff;">
+                            Products
+                        </h6>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Angular</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">React</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+                        <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff;">
+                            Useful links
+                        </h6>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p style="color: #fff;">
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4 mt-4" style="color: #fff;">Contact</h6>
+                        <p style="color: #fff;"><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p style="color: #fff;">
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p style="color: #fff;"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p style="color: #fff;"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05); color: #fff;">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="">ToyZone.com</a>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        let products = [
+            {
+                id: 1,
+                name: " telephone",
+                price: 50.00,
+                image: "assets/img/product-1.jfif",
+                quantity: 1,
+            },
+            {
+                id: 2,
+                name: "Parters",
+                price: 30.00,
+                image: "assets/img/product-2.jfif",
+                quantity: 1,
+            },
+            {
+                id: 3,
+                name: " Dolphine",
+                price: 55.00,
+                image: "assets/img/product-3.jfif",
+                quantity: 1,
+            },
+            {
+                id: 4,
+                name: "strawberries cartoons",
+                price: 60.00,
+                image: "assets/img/product-4.jfif",
+                quantity: 1,
+            },
+            {
+                id: 5,
+                name: " basket toy",
+                price: 80.00,
+                image: "assets/img/product-5.jfif",
+                quantity: 1,
+            },
+            {
+                id: 6,
+                name: " telephone",
+                price: 90.00,
+                image: "assets/img/product-6.jfif",
+                quantity: 1,
+            },
+            {
+                id: 7,
+                name: " Drumset",
+                price: 100.00,
+                image: "assets/img/product-7.jfif",
+                quantity: 1,
+            },
+            {
+                id: 8,
+                name: " TOYHouse",
+                price: 85.00,
+                image: "assets/img/product-8.jfif",
+                quantity: 1,
+            },
+            {
+                id: 9,
+                name: " Math Shapes",
+                price: 95.00,
+                image: "assets/img/product-9.jpg",
+                quantity: 1,
+            },
+            {
+                id: 10,
+                name: " Toy with TEDDY",
+                price: 70.00,
+                image: "assets/img/product-10.jfif",
+                quantity: 1,
+            },
+            {
+                id: 11,
+                name: " HOme Teddy",
+                price: 75.00,
+                image: "assets/img/product-11.jfif",
+                quantity: 1,
+            },
+            {
+                id: 12,
+                name: " Basket Toy",
+                price: 80.00,
+                image: "assets/img/product-12.jfif",
+                quantity: 1,
+            },
+            {
+                id: 13,
+                name: " Teddy with Car",
+                price: 90.00,
+                image: "assets/img/product-13.jfif",
+                quantity: 1,
+            },
+            {
+                id: 14,
+                name: " size Ring",
+                price: 110.00,
+                image: "assets/img/product-14.jfif",
+                quantity: 1,
+            },
+            {
+                id: 15,
+                name: " Shaping toy",
+                price: 95.00,
+                image: "assets/img/product-15.jfif",
+                quantity: 1,
+            },
+            
+
+
+        ];
+
+        let tbl = "";
+        products.map((p) => {
+            tbl += `
+                <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0 mt-5">
+                    <div class="product-item">
+                        <img src="${p.image}" class="img-fluid product">
+                        <h3 class="product-title">${p.name}</h3>
+                        <strong class="product-price">$${p.price}</strong>
+                        <span class="d-block">
+                            <button onclick="addcart(${p.id})" style="background-color:#000; color: white; width: 150px;">ADD TO CART</button> 
+                        </span>
+                        
+                    </div>
+                </div>
+                `;
+        });
+        document.getElementById("products").innerHTML = tbl;
+
+        let cart = [];
+
+        const addcart = (id) => {
+            let c = products.find(item => item.id == id);
+
+            if (c) {
+                cart.push(c);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert("Your Product is Successfully added to the cart");
+
+            }
+        }
+    </script>
+</body>
+
+</html>
